@@ -3,6 +3,7 @@ import java.awt.Container;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
@@ -36,21 +37,26 @@ public class TempConversion extends JFrame
     
 public TempConversion()
 {
+    this.setIconImage(new 
+        ImageIcon(getClass().getResource("logowilde1.png")).getImage()); 
     setTitle("Temperature Conversion");
     Container pane = getContentPane();
     pane.setLayout(new GridLayout(1, 4));
     
-    celsiusLabel = new JLabel("Temp in Celcius: ", SwingConstants.RIGHT);
+    celsiusLabel = new JLabel("Temp in Celcius >>>>", SwingConstants.CENTER);
     
-    fahreinheitLabel = new JLabel("Temp in Fareinheit: ", SwingConstants.RIGHT);
+    fahreinheitLabel = new JLabel("Temp in Fareinheit >>>>", SwingConstants.CENTER);
     
     celsiusTF = new JTextField(7);
     fahreinheitTF = new JTextField(7);
     
     pane.add(celsiusLabel);
     pane.add(celsiusTF);
+    
+    
     pane.add(fahreinheitLabel);
     pane.add(fahreinheitTF);
+    
     
     celsiusHandler = new CelsHandler();
     fahreinheitHandler = new FahrHandler();
